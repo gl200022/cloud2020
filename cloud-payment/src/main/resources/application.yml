@@ -6,6 +6,12 @@ spring:
     name: payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    driver-class-name: org.gjt.mm.mysql.Driver
-    url: jdbc
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://glweb.top:33068/cloud?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: 123456
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+  type-aliases-package: com.glweb.cloud.entities
 
