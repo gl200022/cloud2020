@@ -12,7 +12,11 @@ public class OrderController {
     @Resource
     private RestTemplate restTemplate;
 
-    private static final String PAYMENT_URL = "http://localhost:8001";
+    //单机访问路径
+    //private static final String PAYMENT_URL = "http://localhost:8001";
+
+    //集群访问路径，通过服务名访问,对于eureka中Application
+    private static final String PAYMENT_URL = "http://PAYMENT-SERVICE";
 
     @GetMapping("/consumer/payment/insert")
     public CommonResult insert(Payment payment) {
