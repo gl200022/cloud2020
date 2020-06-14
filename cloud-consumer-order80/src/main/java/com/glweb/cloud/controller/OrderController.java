@@ -2,7 +2,6 @@ package com.glweb.cloud.controller;
 
 import com.glweb.cloud.entities.CommonResult;
 import com.glweb.cloud.entities.Payment;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
