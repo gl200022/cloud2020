@@ -21,7 +21,11 @@ eureka:
       #单机配置
       #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
-
+  #若不设置这eureka中显示为localhost:payment-service:8001
+  instance:
+    instance-id: payment8002
+    #访问路径显示ip地址
+    prefer-ip-address: true
 mybatis:
   mapperLocations: classpath:mapper/*.xml
   type-aliases-package: com.glweb.cloud.entities

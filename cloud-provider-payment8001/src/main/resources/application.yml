@@ -21,6 +21,19 @@ eureka:
       #单机配置
       #defaultZone: http://localhost:7001/eureka
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+  #若不设置这eureka中显示为localhost:payment-service:8001
+  instance:
+    instance-id: payment8001
+    #访问路径显示ip地址
+    prefer-ip-address: true
+    #表示eureka client发送心跳给server端的频率。如果在leaseExpirationDurationInSeconds后，
+    #server端没有收到client的心跳，则将摘除该instance
+    lease-renewal-interval-in-seconds: 5
+    #表示eureka server至上一次收到client的心跳之后，等待下一
+    #次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    lease-expiration-duration-in-seconds: 10
+  #eureka.client.registry-fetch-interval-seconds
+  #表示eureka client间隔多久去拉取服务注册信息，默认为30秒，对于api-gateway，如果要迅速获取服务注册状态，可以缩小该值，比如5秒
 
 mybatis:
   mapperLocations: classpath:mapper/*.xml

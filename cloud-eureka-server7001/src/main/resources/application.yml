@@ -14,5 +14,10 @@ eureka:
       #defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
       #集群配置
       defaultZone: http://eureka7002.com:7002/eureka/
+  server:
+    #关闭自我保护机制
+    enable-self-preservation: false
+    #清理无效节点的时间间隔
+    eviction-interval-timer-in-ms: 10000
 
 
